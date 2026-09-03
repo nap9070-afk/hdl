@@ -1,10 +1,10 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -expand -group {New Group} -color {Violet Red} -itemcolor Maroon /full_adder_single_bit_beh_tb/uut/a
-add wave -noupdate -expand -group {New Group} -color {Violet Red} -itemcolor Maroon /full_adder_single_bit_beh_tb/uut/b
-add wave -noupdate -expand -group {New Group} -color Yellow -itemcolor Maroon /full_adder_single_bit_beh_tb/uut/cin
-add wave -noupdate -expand -group {New Group} -color Yellow -itemcolor Maroon /full_adder_single_bit_beh_tb/uut/sum
-add wave -noupdate -expand -group {New Group} -color Yellow -itemcolor Maroon /full_adder_single_bit_beh_tb/uut/cout
+add wave -noupdate -expand -group {New Group} -color {Violet Red} -itemcolor Maroon /full_adder_single_bit_arch_tb/uut/a
+add wave -noupdate -expand -group {New Group} -color {Violet Red} -itemcolor Maroon /full_adder_single_bit_arch_tb/uut/b
+add wave -noupdate -expand -group {New Group} -color Yellow -itemcolor Maroon /full_adder_single_bit_arch_tb/uut/cin
+add wave -noupdate -expand -group {New Group} -color Yellow -itemcolor Maroon /full_adder_single_bit_arch_tb/uut/sum
+add wave -noupdate -expand -group {New Group} -color Yellow -itemcolor Maroon /full_adder_single_bit_arch_tb/uut/cout
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {14 ns} 0}
 quietly wave cursor active 1
