@@ -13,12 +13,22 @@ radix define States {
     -default default
 }
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /seven_seg_tb/uut/clk
-add wave -noupdate /seven_seg_tb/uut/reset
-add wave -noupdate /seven_seg_tb/uut/bcd
-add wave -noupdate -radix States /seven_seg_tb/uut/seven_seg_out
+add wave -noupdate -expand -group tb /counter_tb/output
+add wave -noupdate -expand -group tb /counter_tb/clk
+add wave -noupdate -expand -group tb /counter_tb/reset
+add wave -noupdate -expand -group tb /counter_tb/sum
+add wave -noupdate -expand -group tb /counter_tb/enable
+add wave -noupdate -expand -group tb /counter_tb/sum_sig
+add wave -noupdate -expand -group tb /counter_tb/period
+add wave -noupdate -expand -group uut /counter_tb/uut/clk
+add wave -noupdate -expand -group uut /counter_tb/uut/reset
+add wave -noupdate -expand -group uut /counter_tb/uut/seven_seg_out
+add wave -noupdate -expand -group uut /counter_tb/uut/sum_sig
+add wave -noupdate -expand -group uut /counter_tb/uut/enable
+add wave -noupdate -expand -group uut /counter_tb/uut/sum
+add wave -noupdate -expand -group uut /counter_tb/uut/inc
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {50000 ps} 0}
+WaveRestoreCursors {{Cursor 1} {10726 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 177
 configure wave -valuecolwidth 40
@@ -34,4 +44,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {400250 ps} {505250 ps}
+WaveRestoreZoom {0 ns} {525 us}

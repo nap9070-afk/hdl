@@ -20,24 +20,11 @@ component seven_seg is
   );  
 end component; 
 
-component generic_counter is
-  generic (
-    max_count       : integer range 0 to 100 := 3
-  );
-  port (
-    clk             : in  std_logic; 
-    reset           : in  std_logic;
-    output          : out std_logic
-  );  
-end component;
-
 signal output       : std_logic;
 constant period     : time := 20ns;                                              
 signal clk          : std_logic := '0';
 signal reset        : std_logic := '1';
 signal bcd          : std_logic_vector(3 downto 0) := "0000";
-signal sync1        : std_logic;
-signal sync2        : std_logic;
 
 begin
 
@@ -75,25 +62,5 @@ uut: seven_seg
     reset          => reset,
     bcd            => bcd,
     seven_seg_out  => open
-  );
-  
-uut1: generic_counter  
-  generic map (
-    max_count => 9
-  )
-  port map(
-    clk       => clk,
-    reset     => reset,
-    output    => sync1
-  );
-  
-uut2: generic_counter  
-  generic map (
-    max_count => 19
-  )
-  port map(
-    clk       => clk,
-    reset     => reset,
-    output    => sync2
   );
 end arch;
